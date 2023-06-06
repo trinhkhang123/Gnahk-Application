@@ -18,6 +18,7 @@ export default function Dashboard() {
             key1: token
           }
         })
+        
         .then(response => {
           setUser(response.data);
           // Tiếp tục xử lý dữ liệu người dùng
