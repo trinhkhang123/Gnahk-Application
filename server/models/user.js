@@ -1,3 +1,4 @@
+const { int } = require('hardhat/internal/core/params/argumentTypes');
 const mongoose = require('mongoose');
 const {Schema} = mongoose
 
@@ -7,7 +8,8 @@ const userSchema = new Schema({
         type : String,
         unique: true
     },
-    password: String
+    password: String,
+    id : Number
 })
 
 const UserModel = mongoose.model('User',userSchema);
