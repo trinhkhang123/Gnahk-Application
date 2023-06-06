@@ -1,0 +1,13 @@
+.wrapper {
+    min-width: 300px;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 5px;
+}
