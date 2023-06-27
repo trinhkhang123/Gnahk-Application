@@ -4,8 +4,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
 pragma solidity ^0.8.0;
-
-import "../interfaces/IERC20.sol";
 import '../libraries/ownable.sol';
 import '../libraries/safemath.sol';
 
@@ -29,7 +27,7 @@ contract TokenExchange is Ownable {
     mapping (address => mapping(address => uint)) tranfer_done;
     string[] public rally_commitments;
     
-    uint public eth_denominator = 100;
+    uint public eth_denominator = 1 ether;
     
     constructor(address addressVerifier) 
     {
@@ -53,7 +51,7 @@ contract TokenExchange is Ownable {
         payable
         external
     {   
-        require(nullifierHashes[nullifier] == 1, "The note has been already spent");
+        require(nullifierHashes[nullifier] == 0, "The note has been already spent");
        
         //payable(_recipient).transfer(amount_eth_permanent.sub(amount_eth_permanent.mul(swap_fee_numerator).div(swap_fee_denominator)));
        
@@ -72,13 +70,13 @@ contract TokenExchange is Ownable {
         nullifierHashes[nullifier] = 1;
 
         payable(_recipient).transfer(eth_denominator);
-       
     }
 
     function deposit(string memory commitment) payable external {
         if (msg.value >= eth_denominator && commitments[commitment] == 0) {
             
             commitments[commitment] = 1;
+            rally_commitments.push(commitment);
         }
     }
 
@@ -88,5 +86,10 @@ contract TokenExchange is Ownable {
 
      function getSenderBalance() external view returns (uint256) {
         return msg.sender.balance;
+    }
+
+      function rallyCommitment() public view returns (string[] memory)
+    {
+        return rally_commitments;
     }
 }

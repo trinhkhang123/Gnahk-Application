@@ -17,7 +17,7 @@ export default function Register() {
     //console.log(data);
     e.preventDefault();
     const {name, userName, password}  = data
-
+    //console.log(userName);
     //console.log(name)
     
     try {

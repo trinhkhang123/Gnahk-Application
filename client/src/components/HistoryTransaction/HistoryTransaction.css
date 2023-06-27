@@ -1,0 +1,67 @@
+.scrollable-table {
+  height: 500px; /* Đặt chiều cao mong muốn */
+  overflow-y: auto; /* Kích hoạt cuộn dọc */
+  border-collapse: collapse; 
+  border-bottom: 1px solid #ccc;
+  /* border:#f8f8f8; */
+}
+
+.scrollable-table table {
+  table-layout: fixed; /* Cố định kích thước cột */
+  /* width: 100%; Đặt độ rộng bảng */
+  width: auto;
+}
+
+.scrollable-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f8f8f8;
+  z-index: 2;
+  line-height: 2.5;
+}
+
+.scrollable-table th:nth-child(1) {
+  left: 0;
+  z-index: 3;
+}
+
+.scrollable-table th:nth-child(2) {
+  left: 100px; /* Đặt độ rộng của cột 1 */
+  z-index: 2;
+}
+
+.scrollable-table th:nth-child(3) {
+  left: 200px; /* Đặt độ rộng của cột 1 + cột 2 */
+  z-index: 1;
+}
+
+.address-column {
+  width: 500px; /* Đặt độ rộng cho cột "Address" */
+}
+
+
+
+.type-transaction-column {
+  width: 350px; /* Đặt độ rộng cho cột "Type Transaction" */
+}
+
+.time-column {
+  width: 400px; /* Đặt độ rộng cho cột "Address" */
+}
+
+.status-column {
+  width: 300px; /* Đặt độ rộng cho cột "Status" */
+}
+
+.scrollable-table thead th {
+  text-align: center; /* Căn giữa nội dung trong các tiêu đề */
+  font-size: 12px;
+}
+
+.scrollable-table tbody td {
+  text-align: center; /* Căn giữa nội dung trong các ô dữ liệu */
+  color:white;
+  line-height: 2;
+  border: none;
+  font-size: 10px;
+}

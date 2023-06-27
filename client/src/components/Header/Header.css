@@ -1,0 +1,20 @@
+.larger-button {
+    font-size: 24px;
+    padding: 23px 80px;
+    font-size: 44px;
+    transition: all 0.3s;
+  }
+  .larger-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  }
+  .header {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+  }
+
+  .header-content {
+    /* display: flex; */
+    flex-direction: column;
+  }

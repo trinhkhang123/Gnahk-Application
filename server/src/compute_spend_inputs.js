@@ -25,7 +25,8 @@ Arguments:
    <nullifier>   The nullifier to print a witness of validity for.
                  Must be present in the transcript.
 `
-
+const SparseMerkleTree = require('./sparse_merkle_tree.js')
+const {mimc2} = require("./mimc");
 /*
  * Computes inputs to the Spend circuit.
  *
@@ -101,5 +102,9 @@ function computeInput(depth, transcript, nullifier,nonce) {
   snark_input["direction"].push(direction);
   }
   return snark_input;
+}
+
+module.exports = {
+  computeInput
 }
 

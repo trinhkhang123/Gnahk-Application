@@ -1,0 +1,14 @@
+.wrapper {
+    max-width: 600px;
+    width: 600px;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+    
+    border: 1px solid rgb(252, 251, 251);
+    padding: 20px;
+    border-radius: 6px;
+}

@@ -1,0 +1,19 @@
+.user-info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-name {
+  margin-bottom: 5px;
+}
+
+.user-address {
+  color: gray;
+}

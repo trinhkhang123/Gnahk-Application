@@ -29,12 +29,28 @@ export default function Login() {
       }
       //navigate('/dashboard');
       else {
+        const getInfo = async () => {
+          //console.log(token);
+          const responce = await axios.get('/profile',{
+              params: {
+                  key1: data.data
+              }
+            });
+            return responce;
+        }
+
+        const user = await getInfo();
+
+        console.log(user);
       //  setData({})
         //console.log(data.data);
         localStorage.setItem("token",data.data);
        // console.log(3);
         localStorage.setItem("loggedIn",true);
-        navigate('/dashboard');
+
+        localStorage.setItem("name",user.data.user.name);
+        console.log(user.data.name);
+        navigate('/home');
       }
     } catch (error) {
      console.log(error);
@@ -47,7 +63,7 @@ export default function Login() {
     const isLoggedIn = localStorage.getItem("loggedIn");
   
     if (isLoggedIn === "true") {
-      navigate('/dashboard');
+      navigate('/home');
     }
   }, [navigate]);
 

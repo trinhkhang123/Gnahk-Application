@@ -85,4 +85,4 @@ class SparseMerkleTree {
     }
 
 }
-
+module.exports = SparseMerkleTree

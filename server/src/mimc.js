@@ -133,3 +133,6 @@ function mimc2(in0, in1) {
 }
 
 
+module.exports = {
+    mimc2: mimc2
+}

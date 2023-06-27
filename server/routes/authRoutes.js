@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const cors = require('cors');
-const {test, registerUser,loginUser,getProfile, accountUser} = require('../controllers/authController')
+const {getHistory,test, registerUser,loginUser,getProfile, accountUser,getBalance,addHistory} = require('../controllers/authController')
 
 router.use(
     cors({
         credentials:true,
-        origin: 'http://localhost:5173' 
+        origin: ['http://172.20.10.2:5173'],
     })
 )
 
@@ -19,5 +19,11 @@ router.post('/login',loginUser);
 router.get('/profile',getProfile);
 
 router.get('/accountUser',accountUser);
+
+router.get('/getBalance',getBalance)
+
+router.get('/getHistory',getHistory)
+
+router.post('/addHistory',addHistory)
 
 module.exports = router
